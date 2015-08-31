@@ -18,6 +18,7 @@ defmodule PhoenixTutorial.Router do
 
     get "/", PageController, :index
     get "/hello", HelloController, :index
+    resources "/terms", TermController
   end
 
   # Other scopes may use custom stacks.
