@@ -18,6 +18,7 @@ defmodule PhoenixTutorial.Router do
 
     get "/", PageController, :index
     get "/hello", HelloController, :index
+    get "/test", PageController, :test
     resources "/terms", TermController
   end
 
