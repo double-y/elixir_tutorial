@@ -7,6 +7,8 @@ defmodule PhoenixTutorial.User do
     field :bio, :string
     field :number_of_pets, :integer
 
+    has_many :videos, PhoenixTutorial.Video
+
     timestamps
   end
 
