@@ -5,8 +5,7 @@ defmodule PhoenixTutorial.ErrorViewTest do
   import Phoenix.View
 
   test "renders 404.html" do
-    assert render_to_string(PhoenixTutorial.ErrorView, "404.html", []) ==
-           "Page not found"
+    assert String.contains?(render_to_string(PhoenixTutorial.ErrorView, "404.html", []), "Sorry, the page you are looking for does not exist.")
   end
 
   test "render 500.html" do
