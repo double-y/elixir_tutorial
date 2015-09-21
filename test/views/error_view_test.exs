@@ -6,6 +6,7 @@ defmodule PhoenixTutorial.ErrorViewTest do
 
   @moduletag :error_view_case
 
+  @tag error_view_case: "not_found"
   test "renders 404.html" do
     assert String.contains?(render_to_string(PhoenixTutorial.ErrorView, "404.html", []), "Sorry, the page you are looking for does not exist.")
   end
