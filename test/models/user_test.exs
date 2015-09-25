@@ -20,4 +20,10 @@ defmodule PhoenixTutorial.UserTest do
     changeset = User.changeset(%User{}, @invalid_attrs)
     refute changeset.valid?
   end
+
+  test "bio must be at least two characters long" do
+    attrs = %{@valid_attrs | bio: "I"}
+    changeset = User.changeset(%User{}, attrs)
+    refute changeset.valid?
+  end
 end
