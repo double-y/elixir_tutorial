@@ -5,15 +5,15 @@ defmodule PhoenixTutorial.Video do
     field :name, :string
     field :approved_at, Ecto.DateTime
     field :description, :string
-    field :likes, :integer
+    field :like, :integer
 
     belongs_to :user, HelloPhoenix.User
 
     timestamps
   end
 
-  @required_fields ~w(name approved_at description likes, user_id)
-  @optional_fields ~w()
+  @required_fields ~w(name approved_at description likes)
+  @optional_fields ~w(user_id)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -24,6 +24,7 @@ defmodule PhoenixTutorial.Video do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> validate_length(:likes, min: 0)
   end
 
   before_update :reset_approved_at
